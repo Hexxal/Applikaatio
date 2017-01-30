@@ -15,20 +15,16 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="38dp"
-        android:id="@+id/editText" />
+        android:layout_marginTop="15dp"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Potilaan puh. nro:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView3"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:id="@+id/textView3" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
