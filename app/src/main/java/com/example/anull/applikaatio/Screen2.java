@@ -26,11 +26,11 @@ public class Screen2 extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.button2:
-                Intent intent = new Intent(Screen2.this, ScreenPatientSettings.class);
+                Intent intent = new Intent(Screen2.this, ScreenNurseSettings.class);
                 startActivity(intent);
                 break;
             case R.id.button3:
-                Intent intent2 = new Intent(Screen2.this, ScreenNurseSettings.class);
+                Intent intent2 = new Intent(Screen2.this, ScreenPatientSettings.class);
                 startActivity(intent2);
                 break;
             default:
