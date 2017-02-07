@@ -9,5 +9,10 @@ public class ScreenNurseSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nursesettings);
+
+        //
+       // public void onClick(View v) {
+        //ButtonTest1 ButtonT1 = new ButtonTest1();
+        }
     }
-}
+

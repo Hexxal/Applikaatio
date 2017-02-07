@@ -5,23 +5,47 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @Override
-    //Kun ohjelman ensimmäinen View (MainActivity.java) avataan,
-    //asetetaan OnClickListener seuraamaan nappia 'button'
+
+    //Seurataan button2 ja button3 painikkeita
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.button).setOnClickListener(new handleButton());
+        setContentView(R.layout.secondscreen);
+
+        Button one = (Button) findViewById(R.id.button2);
+        one.setOnClickListener(this);
+        Button two = (Button) findViewById(R.id.button3);
+        two.setOnClickListener(this);
+        //findViewById(R.id.button2).setOnClickListener(new Screen2.handleButton());
+        //findViewById(R.id.button3).setOnClickListener(new Screen2.handleButton());
     }
 
-    //Kun nappia button klikataan, vaihdetaan View MainActivitystä Screen2:een
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.button3:
+                Intent intent = new Intent(MainActivity.this, ScreenNurseSettings.class);
+                startActivity(intent);
+                break;
+            case R.id.button2:
+                Intent intent2 = new Intent(MainActivity.this, ScreenPatientSettings.class);
+                startActivity(intent2);
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    //Kun button2 tai button3 painetaan, vaihdetaan näkymää (KESKEN)
     class handleButton implements View.OnClickListener {
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this, Screen2.class);
-            startActivity(intent);
+            //Intent intent = new Intent(Screen2.this, ScreenNurseSettings.class);
+            //startActivity(intent);
         }
 
     }

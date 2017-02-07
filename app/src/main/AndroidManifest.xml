@@ -17,9 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Screen2" />
         <activity android:name=".ScreenNurseSettings" />
-        <activity android:name=".ScreenPatientSettings"></activity>
+        <activity android:name=".ScreenPatientSettings">
+        </activity>
     </application>
 
 </manifest>
