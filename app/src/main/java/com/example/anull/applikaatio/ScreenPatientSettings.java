@@ -33,7 +33,7 @@ public class ScreenPatientSettings extends AppCompatActivity implements View.OnC
             case R.id.button4:
                 //Tähän määritellään button4-napin (TESTAA) toiminnot
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:0377778888"));
+                callIntent.setData(Uri.parse("tel:0400896942"));
 
                 //Tarkistetaan sovelluksen oikeudet
                 if (ActivityCompat.checkSelfPermission(ScreenPatientSettings.this,
