@@ -19,10 +19,10 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.nursesettings);
 
         //Testaa nappi
-        Button five = (Button) findViewById(R.id.button4);
+        Button five = (Button) findViewById(R.id.button6);
         five.setOnClickListener(this);
         //Ota käyttöön nappi
-        Button six = (Button) findViewById(R.id.button5);
+        Button six = (Button) findViewById(R.id.button7);
         six.setOnClickListener(this);
         }
 
