@@ -18,8 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScreenNurseSettings" />
-        <activity android:name=".ScreenPatientSettings">
-        </activity>
+        <activity android:name=".ScreenPatientSettings" />
+        <activity android:name=".ScreenNurseFinal" />
+        <activity android:name=".ScreenPatientFinal"></activity>
     </application>
 
 </manifest>

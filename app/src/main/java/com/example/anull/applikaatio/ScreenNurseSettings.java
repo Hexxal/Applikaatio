@@ -30,7 +30,7 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.button4:
+            case R.id.button6:
                 //Tähän määritellään button4-napin (TESTAA) toiminnot
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:0400896942"));
@@ -52,8 +52,10 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
 
 
                 break;
-            case R.id.button5:
+            case R.id.button7:
                 //Tähän button5-toiminnot (OTA KÄYTTÖÖN)
+                Intent intent4 = new Intent(ScreenNurseSettings.this, ScreenNurseFinal.class);
+                startActivity(intent4);
                 break;
             default:
                 break;

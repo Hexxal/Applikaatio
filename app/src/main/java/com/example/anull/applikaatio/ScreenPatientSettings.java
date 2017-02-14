@@ -54,6 +54,8 @@ public class ScreenPatientSettings extends AppCompatActivity implements View.OnC
                 break;
             case R.id.button5:
                 //Tähän button5-toiminnot (OTA KÄYTTÖÖN)
+                Intent intent = new Intent(ScreenPatientSettings.this, ScreenPatientFinal.class);
+                startActivity(intent);
                 break;
             default:
                 break;
