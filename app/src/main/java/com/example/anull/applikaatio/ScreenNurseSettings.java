@@ -7,9 +7,17 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import static android.R.id.message;
+import static com.example.anull.applikaatio.R.id.editText;
+import static com.example.anull.applikaatio.R.id.textView2;
+import static com.example.anull.applikaatio.R.id.textView3;
 
 public class ScreenNurseSettings extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,27 +34,34 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
         six.setOnClickListener(this);
         }
 
+        private void sendSMS(String phoneNumber, String message) {
+            SmsManager sms = SmsManager.getDefault();
+            sms.sendTextMessage(phoneNumber, null, message, null, null);
+        }
+
 
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.button6:
                 //Tähän määritellään button4-napin (TESTAA) toiminnot
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:0400896942"));
+
 
                 //Tarkistetaan sovelluksen oikeudet
                 if (ActivityCompat.checkSelfPermission(ScreenNurseSettings.this,
-                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
 
                     //Ei oikeuksia -> Näytetään Toasti edellisellä ruudulla, ja palataan sinne
                     Toast.makeText(ScreenNurseSettings.this,
-                            "Salli puhelut sovellukselle asetuksista ennen testausta!", Toast.LENGTH_LONG).show();
+                            "Salli tekstiviestit sovellukselle asetuksista ennen testausta!", Toast.LENGTH_LONG).show();
                     return;
 
                 }
                 else {
-                    startActivity(callIntent);
+                    EditText num = (EditText) findViewById(R.id.editText) ;
+                    int val = Integer.parseInt( num.getText().toString() );
+                    String value = Integer.toString(val);
+                    sendSMS(value, "ping");
                 }
 
 
