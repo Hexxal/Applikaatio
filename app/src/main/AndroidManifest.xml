@@ -22,6 +22,15 @@
         <activity android:name=".ScreenPatientSettings" />
         <activity android:name=".ScreenNurseFinal" />
         <activity android:name=".ScreenPatientFinal"></activity>
+
+        <receiver
+            android:name="AppBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.anull.applikaatio.BROADCAST_INTENT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
