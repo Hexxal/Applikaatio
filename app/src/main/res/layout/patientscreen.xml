@@ -26,13 +26,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:hint="saved_number" />
 
     <Button
         android:text="Ota käyttöön"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
+        android:onClick="finishSetup"
         android:layout_marginTop="53dp"
         android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
@@ -43,6 +45,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
+        android:onClick="testPatient"
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

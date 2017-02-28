@@ -16,9 +16,9 @@ public class AppBroadcastReceiver extends BroadcastReceiver {
         // TODO Auto-generated method stub
 
         // Extract data included in the Intent
-        CharSequence intentData = intent.getCharSequenceExtra("message");
+        String intentData = intent.getCharSequenceExtra("nro").toString();
         //Toast.makeText(context, "message: "+intentData, Toast.LENGTH_LONG).show();
 
-        Actions.sendSMS("0451298258", intentData.toString());
+        Actions.sendSMS(intentData, "ViestiTesti");
     }
 }

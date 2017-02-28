@@ -85,7 +85,7 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
 
         EditText et = (EditText)findViewById(R.id.editText);
 
-        in.putExtra("message", "Nurse Test");
+        in.putExtra("nro", (CharSequence)et.getText().toString());
         in.setAction("com.example.anull.applikaatio.BROADCAST_INTENT");
         sendBroadcast(in);
     }
