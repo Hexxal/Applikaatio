@@ -34,11 +34,13 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
         six.setOnClickListener(this);
         }
 
+    /*      Siirretty Actions.java Classiin.
+
         private void sendSMS(String phoneNumber, String message) {
             SmsManager sms = SmsManager.getDefault();
             sms.sendTextMessage(phoneNumber, null, message, null, null);
         }
-
+    */
 
     public void onClick(View v) {
 
@@ -61,7 +63,7 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
                     EditText num = (EditText) findViewById(R.id.editText) ;
                     int val = Integer.parseInt( num.getText().toString() );
                     String value = Integer.toString(val);
-                    sendSMS(value, "ping");
+                    Actions.sendSMS(value, "ping");
                 }
 
 
@@ -76,6 +78,16 @@ public class ScreenNurseSettings extends AppCompatActivity implements View.OnCli
                 break;
         }
 
+    }
+
+    public void BroadcastSMSIntent(View view){
+        Intent in = new Intent("BroadcastSMS");
+
+        EditText et = (EditText)findViewById(R.id.editText);
+
+        in.putExtra("nro", (CharSequence)et.getText().toString());
+        in.setAction("com.example.anull.applikaatio.BROADCAST_INTENT");
+        sendBroadcast(in);
     }
 
 

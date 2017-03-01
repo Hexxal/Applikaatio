@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Applikaatio</string>
+    <string name="app_name">Alarm Project</string>
+    <string name="default_value">0</string>
 </resources>

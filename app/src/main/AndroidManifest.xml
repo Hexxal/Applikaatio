@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +25,15 @@
         <activity android:name=".ScreenPatientSettings" />
         <activity android:name=".ScreenNurseFinal" />
         <activity android:name=".ScreenPatientFinal"></activity>
+
+        <receiver
+            android:name="AppBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.anull.applikaatio.BROADCAST_INTENT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
