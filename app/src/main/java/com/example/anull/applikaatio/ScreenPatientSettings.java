@@ -1,27 +1,28 @@
 package com.example.anull.applikaatio;
 
 import android.Manifest;
-import android.content.Context;
+import android.content.ContentValues;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.provider.Contacts.People;
+
+
+
 
 public class ScreenPatientSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.patientscreen);
+        setContentView(R.layout.patientsettings);
     }
 
     /*
@@ -53,21 +54,43 @@ public class ScreenPatientSettings extends AppCompatActivity {
 
 
 
-    public void finishSetup(View view) {
-        //Tähän button5-toiminnot (OTA KÄYTTÖÖN)
-        SharedPreferences sp = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
+    public void finishPSetup(View view) {
 
-        EditText num = (EditText) findViewById(R.id.editText2) ;
+        //Tarkistetaan sovelluksen oikeudet
+        if (ActivityCompat.checkSelfPermission(ScreenPatientSettings.this,
+                Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
 
-        editor.putString("saved_number", (String)num.getText().toString());
-        editor.commit();
+            //Ei oikeuksia -> Näytetään Toasti edellisellä ruudulla, ja palataan sinne
+            Toast.makeText(ScreenPatientSettings.this,
+                    "Salli kontaktit sovellukselle asetuksista ennen testausta!", Toast.LENGTH_LONG).show();
+            return;
 
-        // siirrytään seuraavaan activityyn
-        Intent intent = new Intent(ScreenPatientSettings.this, ScreenPatientFinal.class);
-        startActivity(intent);
+        }
+        else {
+            EditText num = (EditText) findViewById(R.id.editText2) ;
+
+            addContact("nurse", (String)num.getText().toString());
+
+            // siirrytään seuraavaan activityyn
+            Intent intent = new Intent(ScreenPatientSettings.this, ScreenPatientFinal.class);
+            startActivity(intent);
+        }
+
     }
 
+    private void addContact(String name, String phone) {
+        ContentValues values = new ContentValues();
+        values.put(People.NUMBER, phone);
+        values.put(People.TYPE, Phone.TYPE_CUSTOM);
+        values.put(People.LABEL, name);
+        values.put(People.NAME, name);
+        Uri dataUri = getContentResolver().insert(People.CONTENT_URI, values);
+        Uri updateUri = Uri.withAppendedPath(dataUri, People.Phones.CONTENT_DIRECTORY);
+        values.clear();
+        values.put(People.Phones.TYPE, People.TYPE_MOBILE);
+        values.put(People.NUMBER, phone);
+        updateUri = getContentResolver().insert(updateUri, values);
+    }
 
 
     }

@@ -21,8 +21,6 @@ public class Actions {
         sms.sendTextMessage(phoneNumber, null, message, null, null);
     }
 
-
-
 }
 
 
