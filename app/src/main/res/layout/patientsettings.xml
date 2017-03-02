@@ -34,7 +34,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
-        android:onClick="finishSetup"
+        android:onClick="finishPSetup"
         android:layout_marginTop="53dp"
         android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
