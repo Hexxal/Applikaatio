@@ -10,35 +10,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anull.applikaatio.ScreenPatientSettings">
 
+    <TextView
+        android:text="Hoitajan puh. nro:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:hint="saved_number"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/editText2"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="11dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Hoitajan puh. nro:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:hint="saved_number" />
-
-    <Button
-        android:text="Ota käyttöön"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:onClick="finishPSetup"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
 
     <Button
         android:text="Testaa"
@@ -46,9 +38,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/button4"
         android:onClick="testPatient"
+        android:layout_marginTop="26dp"
+        android:textSize="30sp"
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp" />
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp" />
+
+    <Button
+        android:text="Ota käyttöön"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:onClick="finishPSetup"
+        android:textSize="30sp"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        android:layout_below="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
 
 </RelativeLayout>

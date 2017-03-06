@@ -2,4 +2,6 @@
     <string name="app_name">Alarm Project</string>
     <string name="default_value">0</string>
     <string name="saved_number">0</string>
+    <string name="title_activity_screen_setup">ScreenSetup</string>
+    <string name="title_activity_setup">Setup</string>
 </resources>

@@ -22,28 +22,13 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        /*
-        String num = "asd";
-
-        Log.d("NUM: ", "string");
-        if(num.equals("0")){
-            setContentView(R.layout.activity_main);
-        }
-        else{
-            setContentView(R.layout.activity_screen_patient_final);
-        }
-        */
     }
 
-    public void settingsPatient(View view){
-        Intent intent = new Intent(MainActivity.this, ScreenPatientSettings.class);
+    public void setup(View view){
+        Intent intent = new Intent(MainActivity.this, Setup.class);
         startActivity(intent);
     }
 
-    public void settingsNurse(View view){
-        Intent intent2 = new Intent(MainActivity.this, ScreenNurseSettings.class);
-        startActivity(intent2);
-    }
 
 
 }
