@@ -11,11 +11,31 @@
     tools:context="com.example.anull.applikaatio.ScreenPatientFinal">
 
     <TextView
-        android:text="Potilaan viimeinen ruutu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="36sp"
+        android:text="Patient Screen"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView5" />
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Settings"
+        android:onClick="newSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/settings" />
+
+    <TextView
+        android:text="Active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:id="@+id/textView6"
+        android:textSize="36sp"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
