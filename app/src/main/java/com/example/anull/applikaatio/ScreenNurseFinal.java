@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,7 +19,8 @@ public class ScreenNurseFinal extends AppCompatActivity {
         setContentView(R.layout.activity_screen_nurse_final);
     }
 
-    public void makeCall() {
+    // SOITTAA POTILAALLE
+    public void makeCall(View view) {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
 
         EditText num = (EditText) findViewById(R.id.editText2);
@@ -37,5 +39,10 @@ public class ScreenNurseFinal extends AppCompatActivity {
         } else {
             startActivity(callIntent);
         }
+    }
+
+    // OTTAA KUVAN
+    public void takePhoto(View view){
+
     }
 }
