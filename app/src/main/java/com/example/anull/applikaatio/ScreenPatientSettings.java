@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -32,9 +33,9 @@ public class ScreenPatientSettings extends AppCompatActivity {
         //Tähän määritellään button4-napin (TESTAA) toiminnot
         Intent callIntent = new Intent(Intent.ACTION_CALL);
 
-        EditText num = (EditText) findViewById(R.id.editText2) ;
+        EditText num = (EditText) findViewById(R.id.editText2);
 
-        callIntent.setData(Uri.parse("tel:" + num));
+        callIntent.setData(Uri.parse("tel:" + num.getText().toString()));
 
         //Tarkistetaan sovelluksen oikeudet
         if (ActivityCompat.checkSelfPermission(ScreenPatientSettings.this,

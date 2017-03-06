@@ -49,4 +49,9 @@ public class ScreenPatientFinal extends AppCompatActivity {
             startActivity(callIntent);
         }
     }
+
+    public void newSetup(View view){
+        Intent intent = new Intent(ScreenPatientFinal.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
