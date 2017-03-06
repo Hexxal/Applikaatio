@@ -29,7 +29,7 @@ public class ScreenNurseSettings extends AppCompatActivity{
 
         //Tarkistetaan sovelluksen oikeudet
         if (ActivityCompat.checkSelfPermission(ScreenNurseSettings.this,
-                Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
 
             //Ei oikeuksia -> Näytetään Toasti edellisellä ruudulla, ja palataan sinne
             Toast.makeText(ScreenNurseSettings.this,
